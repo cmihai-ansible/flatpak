@@ -23,12 +23,24 @@ Role Variables
 --------------
 
 ```yaml
-flatpak_remove_packages: true
-flatpak_enable_service: true
-flatpak_enable_selinux: true
-flatpak_firewall_configure: true
-flatpak_firewall_rules:
-  - service:
+# Flatpak method: user or system
+flatpak_method: system
+
+# Flatpacks repos
+flatpak_repos:
+  - https://dl.flathub.org/repo/flathub.flatpakrepo
+
+# Packages to install
+flatpak_packages:
+  - io.neovim.nvim
+  - org.gnu.emacs
+  - com.visualstudio.code
+  - com.slack.Slack
+  - com.wps.Office
+  - com.skype.Client
+  - com.spotify.Client
+  - com.obsproject.Studio
+  - net.xmind.ZEN
 ```
 
 Dependencies
@@ -51,11 +63,24 @@ Example Playbook
       import_role:
         name: crivetimihai.flatpak
       vars:
-        flatpak_remove_packages: true
-        flatpak_enable_service: true
-        flatpak_firewall_configure: true
-        flatpak_firewall_rules:
-          - service:
+        # Flatpak method: user or system
+        flatpak_method: system
+
+        # Flatpacks repos
+        flatpak_repos:
+          - https://dl.flathub.org/repo/flathub.flatpakrepo
+
+        # Packages to install
+        flatpak_packages:
+          - io.neovim.nvim
+          - org.gnu.emacs
+          - com.visualstudio.code
+          - com.slack.Slack
+          - com.wps.Office
+          - com.skype.Client
+          - com.spotify.Client
+          - com.obsproject.Studio
+          - net.xmind.ZEN
       tags: flatpak
 ```
 
