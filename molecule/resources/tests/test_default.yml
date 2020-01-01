@@ -3,9 +3,9 @@
 command:
   help:
     exit-status: 0
-    exec: "systemctl is-active flatpak"
+    exec: "flatpak run io.neovim.nvim --version"
     stdout:
-      - "/active/"
+      - "/NVIM/"
     stderr: []
     timeout: 10000      # in milliseconds
     skip: false
